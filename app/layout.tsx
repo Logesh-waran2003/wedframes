@@ -4,21 +4,20 @@ import "./globals.css";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
-  variable: "--font-playfair",
+  variable: "--font-heading",
   display: "swap",
 });
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
-  variable: "--font-cormorant",
+  variable: "--font-body",
   weight: ["300", "400", "500", "600"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Priya & Arjun — Wedding Invitation",
-  description:
-    "Join us to celebrate our forever — 14th February 2026, The Grand Leela Palace, Chennai",
+  title: "Karthick & Priya — Wedding Invitation",
+  description: "You are cordially invited to celebrate our love story",
 };
 
 export default function RootLayout({
@@ -28,7 +27,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${playfair.variable} ${cormorant.variable}`}>
-      <body className="antialiased">{children}</body>
+      <body>{children}</body>
     </html>
   );
 }

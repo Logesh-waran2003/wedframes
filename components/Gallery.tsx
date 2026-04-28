@@ -1,14 +1,21 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useRef, useEffect } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const IMAGES = [
-  "opening", "cafe", "park", "car", "proposal", "family", "wedding", "night",
+const photos = [
+  { src: "/images/cafe.png", alt: "Café moment", span: "md:col-span-2 md:row-span-2" },
+  { src: "/images/park.png", alt: "Park walk", span: "" },
+  { src: "/images/car.png", alt: "Road trip", span: "" },
+  { src: "/images/proposal.png", alt: "The proposal", span: "md:col-span-2" },
+  { src: "/images/family.png", alt: "Family", span: "" },
+  { src: "/images/wedding.png", alt: "Wedding day", span: "md:col-span-2 md:row-span-2" },
+  { src: "/images/night.png", alt: "Night celebration", span: "" },
+  { src: "/images/opening.png", alt: "Together", span: "" },
 ];
 
 export default function Gallery() {
@@ -16,51 +23,55 @@ export default function Gallery() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const items = gridRef.current?.children;
-      if (items) {
+      const items = gridRef.current?.querySelectorAll(".gallery-item");
+      if (!items) return;
+
+      items.forEach((item) => {
         gsap.fromTo(
-          items,
-          { opacity: 0, y: 20 },
+          item,
+          { opacity: 0, y: 60 },
           {
             opacity: 1,
             y: 0,
-            duration: 0.6,
-            stagger: 0.08,
+            duration: 0.8,
             ease: "power2.out",
             scrollTrigger: {
-              trigger: gridRef.current,
-              start: "top 80%",
-              once: true,
+              trigger: item,
+              start: "top 85%",
+              toggleActions: "play none none none",
             },
           }
         );
-      }
+      });
     }, gridRef);
+
     return () => ctx.revert();
   }, []);
 
   return (
-    <section style={{ background: "#FAF7F2" }} className="py-24 px-6">
-      <h2
-        className="text-4xl text-center"
-        style={{ color: "#1d1d1f", fontFamily: "var(--font-playfair), serif" }}
-      >
-        Moments Together
-      </h2>
-      <div className="w-12 h-px mx-auto mt-4 mb-12" style={{ background: "#C9A84C" }} />
+    <section className="py-24 px-6" style={{ background: "linear-gradient(to bottom, #1a0f08, #1a1008 80%, #FAF7F2)" }}>
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-16">
+          <p className="text-gold text-sm tracking-[0.3em] uppercase mb-3">Moments</p>
+          <h2 className="font-heading text-ivory text-4xl md:text-5xl drop-shadow-lg">Gallery</h2>
+        </div>
 
-      <div ref={gridRef} className="columns-2 md:columns-3 lg:columns-4 gap-3 max-w-6xl mx-auto">
-        {IMAGES.map((name) => (
-          <div key={name} className="overflow-hidden rounded-xl mb-3 cursor-pointer">
-            <Image
-              src={`/images/${name}.png`}
-              alt={name}
-              width={600}
-              height={400}
-              className="w-full object-cover hover:scale-105 transition-transform duration-500"
-            />
-          </div>
-        ))}
+        <div ref={gridRef} className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+          {photos.map((photo) => (
+            <div
+              key={photo.src}
+              className={`gallery-item relative overflow-hidden rounded-sm aspect-square ${photo.span}`}
+            >
+              <Image
+                src={photo.src}
+                alt={photo.alt}
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-700"
+                sizes="(max-width: 768px) 50vw, 25vw"
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
