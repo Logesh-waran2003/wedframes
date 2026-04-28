@@ -31,8 +31,8 @@ const bodoniModa = Bodoni_Moda({
 });
 
 export const metadata: Metadata = {
-  title: "Karthick & Priya — Wedding Invitation",
-  description: "You are cordially invited to celebrate our love story",
+  title: "WedFrames — Premium Digital Wedding Invitations",
+  description: "Premium digital wedding invitations with stunning themes. Cinematic, Beach, and Tamil templates.",
 };
 
 export default function RootLayout({
