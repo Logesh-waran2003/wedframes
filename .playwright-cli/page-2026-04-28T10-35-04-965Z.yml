@@ -1,0 +1,100 @@
+- main [ref=e2]:
+  - generic [ref=e3]:
+    - img "Priya and Arjun" [ref=e4]
+    - generic [ref=e6]:
+      - paragraph [ref=e7]: Together With Their Families
+      - heading "Priya & Arjun" [level=1] [ref=e8]
+      - separator [ref=e9]
+      - paragraph [ref=e10]: 14 · 02 · 2026
+      - img [ref=e12]
+  - paragraph [ref=e15]: Save The Date — 14th February 2026 · The Grand Leela Palace, Chennai
+  - generic [ref=e16]:
+    - heading "Our Story" [level=2] [ref=e17]
+    - separator [ref=e18]
+    - generic [ref=e19]:
+      - generic [ref=e20]:
+        - img "The First Hello" [ref=e22]
+        - generic [ref=e23]:
+          - heading "The First Hello" [level=3] [ref=e24]
+          - paragraph [ref=e25]: It started with a glance across a crowded café...
+      - generic [ref=e26]:
+        - img "Getting Closer" [ref=e28]
+        - generic [ref=e29]:
+          - heading "Getting Closer" [level=3] [ref=e30]
+          - paragraph [ref=e31]: Long walks, longer conversations, and laughter that never stopped.
+      - generic [ref=e32]:
+        - img "Every Road Together" [ref=e34]
+        - generic [ref=e35]:
+          - heading "Every Road Together" [level=3] [ref=e36]
+          - paragraph [ref=e37]: Every journey felt like home when we were side by side.
+      - generic [ref=e38]:
+        - img "The Question" [ref=e40]
+        - generic [ref=e41]:
+          - heading "The Question" [level=3] [ref=e42]
+          - paragraph [ref=e43]: Under a sky full of stars, he got down on one knee...
+      - generic [ref=e44]:
+        - img "Two Families, One Heart" [ref=e46]
+        - generic [ref=e47]:
+          - heading "Two Families, One Heart" [level=3] [ref=e48]
+          - paragraph [ref=e49]: The moment two families became one beautiful story.
+  - generic [ref=e50]:
+    - heading "Wedding Day" [level=2] [ref=e51]
+    - separator [ref=e52]
+    - generic [ref=e53]:
+      - generic [ref=e54]:
+        - generic [ref=e55]: 📅
+        - paragraph [ref=e56]: Date
+        - paragraph [ref=e57]: Saturday, 14th February 2026
+      - generic [ref=e58]:
+        - generic [ref=e59]: 🕕
+        - paragraph [ref=e60]: Time
+        - paragraph [ref=e61]: 6:00 PM onwards
+      - generic [ref=e62]:
+        - generic [ref=e63]: 📍
+        - paragraph [ref=e64]: Venue
+        - paragraph [ref=e65]: The Grand Leela Palace, Chennai
+    - paragraph [ref=e66]: 1 Sardar Patel Road, Guindy, Chennai - 600032
+    - generic [ref=e67]:
+      - generic [ref=e68]:
+        - generic [ref=e69]: "00"
+        - generic [ref=e70]: Days
+      - generic [ref=e71]:
+        - generic [ref=e72]: "00"
+        - generic [ref=e73]: Hours
+      - generic [ref=e74]:
+        - generic [ref=e75]: "00"
+        - generic [ref=e76]: Minutes
+      - generic [ref=e77]:
+        - generic [ref=e78]: "00"
+        - generic [ref=e79]: Seconds
+    - img "Wedding celebration" [ref=e80]
+  - generic [ref=e81]:
+    - heading "Moments Together" [level=2] [ref=e82]
+    - separator [ref=e83]
+    - generic [ref=e84]:
+      - img "Opening" [ref=e85]
+      - img "Café" [ref=e86]
+      - img "Park" [ref=e87]
+      - img "Road trip" [ref=e88]
+      - img "Proposal" [ref=e89]
+      - img "Family" [ref=e90]
+      - img "Wedding" [ref=e91]
+      - img "Night" [ref=e92]
+  - generic [ref=e93]:
+    - heading "Join Our Celebration" [level=2] [ref=e94]
+    - separator [ref=e95]
+    - paragraph [ref=e96]: Kindly respond by 1st February 2026
+    - generic [ref=e97]:
+      - textbox "Full Name" [ref=e99]
+      - textbox "Email" [ref=e101]
+      - combobox [ref=e103]:
+        - option "Number of Guests" [disabled] [selected]
+        - option "1"
+        - option "2"
+        - option "3"
+        - option "4"
+      - textbox "A message for the couple (optional)" [ref=e105]
+      - button "Send RSVP" [ref=e106] [cursor=pointer]
+  - generic [ref=e107]:
+    - paragraph [ref=e108]: Priya & Arjun
+    - paragraph [ref=e109]: 14 · 02 · 2026
