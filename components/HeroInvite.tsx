@@ -1,6 +1,4 @@
 "use client";
-
-import Image from "next/image";
 import LayeredScene from "./LayeredScene";
 
 export default function HeroInvite() {
@@ -9,37 +7,45 @@ export default function HeroInvite() {
       bg="/images/opening.png"
       couple="/layers/opening-couple.png"
       foreground="/layers/floral-overlay.png"
+      sectionBg="linear-gradient(to bottom, #0d0500, #1a0a00)"
+      fullLayout
     >
-      <div className="text-center px-6 max-w-3xl mx-auto">
-        <p className="text-gold font-body text-xs tracking-[0.4em] uppercase mb-6 drop-shadow-md">
+      {/* Bottom bar — split names left/right, center connector */}
+      <div className="absolute bottom-0 left-0 right-0 z-10 flex items-end px-8 pb-12">
+
+        {/* LEFT — Karthick */}
+        <div className="flex-1 text-left">
+          <p className="font-display text-gold/60 text-xs tracking-[0.4em] uppercase mb-1 drop-shadow-md">Groom</p>
+          <h1 className="font-script text-ivory leading-none drop-shadow-lg" style={{ fontSize: "clamp(48px, 6.5vw, 88px)" }}>
+            Karthick
+          </h1>
+        </div>
+
+        {/* CENTER */}
+        <div className="flex flex-col items-center gap-2 px-6 pb-2">
+          <div className="shimmer-line w-16 h-px" />
+          <p className="font-display text-gold text-xl tracking-[0.3em] drop-shadow-md">&amp;</p>
+          <div className="shimmer-line w-16 h-px" />
+          <p className="font-display text-ivory/40 text-xs tracking-[0.2em] uppercase mt-1 whitespace-nowrap drop-shadow-md">
+            Jun 21 · 2026
+          </p>
+        </div>
+
+        {/* RIGHT — Priya */}
+        <div className="flex-1 text-right">
+          <p className="font-display text-gold/60 text-xs tracking-[0.4em] uppercase mb-1 drop-shadow-md">Bride</p>
+          <h1 className="font-script text-ivory leading-none drop-shadow-lg" style={{ fontSize: "clamp(48px, 6.5vw, 88px)" }}>
+            Priya
+          </h1>
+        </div>
+
+      </div>
+
+      {/* Top center — tagline */}
+      <div className="absolute top-8 left-0 right-0 flex justify-center z-10">
+        <p className="font-display text-ivory/40 text-xs tracking-[0.4em] uppercase drop-shadow-md">
           Together with their families
         </p>
-
-        <h1 className="font-heading text-ivory text-6xl md:text-8xl font-normal leading-tight mb-2 drop-shadow-lg">
-          Karthick
-        </h1>
-        <p className="text-gold text-3xl md:text-4xl font-body italic mb-2 drop-shadow-md">&amp;</p>
-        <h1 className="font-heading text-ivory text-6xl md:text-8xl font-normal leading-tight mb-10 drop-shadow-lg">
-          Priya
-        </h1>
-
-        <div className="w-24 h-px bg-gold/60 mx-auto mb-8" />
-
-        <p className="text-ivory/95 font-body text-xl md:text-2xl tracking-wide drop-shadow-md">
-          Request the pleasure of your company
-        </p>
-        <p className="text-ivory/80 font-body text-lg mt-3 drop-shadow-md">
-          Saturday, the Twenty-First of June
-        </p>
-        <p className="text-ivory/80 font-body text-lg drop-shadow-md">
-          Two Thousand and Twenty-Six
-        </p>
-
-        <div className="mt-12 animate-bounce">
-          <svg className="w-6 h-6 mx-auto text-gold/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
-        </div>
       </div>
     </LayeredScene>
   );

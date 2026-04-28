@@ -6,8 +6,10 @@
   --color-dark: #111111;
   --color-blush: #F2D7D5;
   --color-text: #1d1d1f;
-  --font-heading: "Playfair Display", serif;
-  --font-body: "Cormorant Garamond", serif;
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
+  --font-script: var(--font-script);
+  --font-display: var(--font-display);
 }
 
 html {
@@ -28,4 +30,49 @@ h1, h2, h3, h4, h5, h6 {
 ::selection {
   background: var(--color-gold);
   color: var(--color-ivory);
+}
+
+/* Shimmer sweep */
+.shimmer-line {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #C9A84C 20%,
+    #F0D080 40%,
+    #FFFBE8 50%,
+    #F0D080 60%,
+    #C9A84C 80%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+/* Tap bounce */
+.tap-bounce {
+  animation: tapBounce 2s ease-in-out infinite;
+}
+
+@keyframes tapBounce {
+  0%, 100% { transform: translateY(0);  opacity: 0.4; }
+  50%       { transform: translateY(8px); opacity: 1; }
+}
+
+/* Floating particles */
+@keyframes floatParticle {
+  0%   { opacity: 0; transform: translate(0, 0) scale(0); }
+  10%  { opacity: 1; transform: translate(var(--drift-x), -8vh) scale(1); }
+  90%  { opacity: 0.6; transform: translate(calc(var(--drift-x) * 3), -85vh) scale(0.8); }
+  100% { opacity: 0; transform: translate(calc(var(--drift-x) * 4), -100vh) scale(0); }
+}
+
+/* Spinning rings */
+@keyframes spinRing {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
