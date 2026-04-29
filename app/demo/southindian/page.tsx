@@ -60,8 +60,8 @@ const CSS = `
 }
 #si-theme *{box-sizing:border-box;margin:0;padding:0;}
 .si-scene{position:relative;width:100%;height:100vh;min-height:600px;overflow:hidden;display:flex;align-items:center;justify-content:center;}
-.si-bg{position:absolute;inset:0;background-size:cover;background-position:center;transform-origin:center;will-change:transform;}
-.si-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,4,0,.62) 0%,rgba(10,4,0,.18) 45%,rgba(10,4,0,.75) 100%);}
+.si-bg{position:absolute;inset:0;background-size:cover;background-position:center;transform-origin:center;will-change:transform;filter:blur(8px) brightness(0.7);transform:scale(1.08);}
+.si-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,4,0,.82) 0%,rgba(10,4,0,.65) 45%,rgba(10,4,0,.90) 100%);}
 .si-content{position:relative;z-index:10;text-align:center;padding:2rem;max-width:680px;width:100%;}
 .si-label{font-family:var(--font-t);font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);opacity:.85;margin-bottom:1rem;}
 .si-script{font-family:var(--font-s);font-size:clamp(3rem,8vw,5.5rem);color:var(--cream);line-height:1.1;text-shadow:0 2px 24px rgba(201,168,76,.45);}
@@ -199,7 +199,7 @@ function Scene({
       />
       <div
         className="si-overlay"
-        style={overlayDark ? { background: 'rgba(10,4,0,.82)' } : undefined}
+        style={overlayDark ? { background: 'rgba(10,4,0,.92)' } : undefined}
       />
       <div ref={contentRef} className="si-content">
         {children}
@@ -273,7 +273,7 @@ export default function SouthIndianPage() {
       </Scene>
 
       {/* 3 ── Couple reveal */}
-      <Scene frameNum={11}>
+      <Scene frameNum={9} overlayDark>
         <p className="si-label si-line">
           {config.couple.groom.tamilName} &amp; {config.couple.bride.tamilName}
         </p>
@@ -323,8 +323,19 @@ export default function SouthIndianPage() {
         </a>
       </Scene>
 
-      {/* 5 ── Ceremonies (dark section, no full-screen bg) */}
-      <section className="si-ceremonies">
+      {/* 5 ── Ceremonies */}
+      <section className="si-ceremonies" style={{
+        backgroundImage: `url(${frame(5)})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
+        position: 'relative',
+      }}>
+        <div style={{
+          position: 'absolute', inset: 0,
+          background: 'rgba(10,4,0,.88)',
+        }} />
+        <div style={{ position: 'relative', zIndex: 1 }}>
         <div className="si-section-head">
           <h2>Wedding Ceremonies</h2>
           <p>திருமண நிகழ்வுகள்</p>
@@ -343,6 +354,7 @@ export default function SouthIndianPage() {
               <span className="si-cer-time">{c.time}</span>
             </div>
           ))}
+        </div>
         </div>
       </section>
 
@@ -373,7 +385,7 @@ export default function SouthIndianPage() {
       </Scene>
 
       {/* 7 ── Reception */}
-      <Scene frameNum={21} overlayDark>
+      <Scene frameNum={17} overlayDark>
         <p className="si-label si-line">You are cordially invited to</p>
         <div className="si-reception-card si-line">
           <p style={{ fontFamily: 'var(--font-t)', fontSize: '.7rem', letterSpacing: '.2em', color: 'var(--gold)', opacity: .7, textTransform: 'uppercase' }}>
@@ -398,7 +410,7 @@ export default function SouthIndianPage() {
       </Scene>
 
       {/* 8 ── RSVP + Countdown */}
-      <Scene frameNum={25}>
+      <Scene frameNum={15} overlayDark>
         <p className="si-label si-line">Awaiting your presence</p>
         <div className="si-divider si-line" />
         <h2 className="si-heading si-line" style={{ fontSize: 'clamp(1.4rem,4vw,2.2rem)' }}>
@@ -431,7 +443,7 @@ export default function SouthIndianPage() {
       </Scene>
 
       {/* 9 ── Closing */}
-      <Scene frameNum={29} overlayDark>
+      <Scene frameNum={27} overlayDark>
         <div className="si-line">
           <div className="si-deity-ring">
             <span className="si-deity-text">ஓம்</span>
