@@ -42,7 +42,8 @@ function OrnamentDivider() {
 const templates = [
   { num: '01', name: 'Cinematic', label: 'Most Popular', desc: 'A layered parallax experience with envelope reveal, firefly particles, and cinematic scroll storytelling.', tags: ['Cinematic', 'Parallax', 'GSAP'], href: '/demo/cinematic', preview: 'Dark luxury · Layered parallax · Envelope reveal' },
   { num: '02', name: 'Beach', label: 'North Indian', desc: 'Elegant beach-inspired design with horizontal scroll events, warm ivory tones, and smooth GSAP animations.', tags: ['Beach', 'Elegant', 'Warm'], href: '/demo/beach', preview: 'Ivory & gold · Horizontal scroll · Warm tones' },
-  { num: '03', name: 'Tamil', label: 'Traditional', desc: 'Dark luxury Tamil wedding invite with split-door hero, gold shimmer, lanterns, and bilingual content.', tags: ['Tamil', 'Bilingual', 'Dark Luxury'], href: '/demo/tamil', preview: 'Dark gold · Split-door hero · Tamil + English' }
+  { num: '03', name: 'Tamil', label: 'Traditional', desc: 'Dark luxury Tamil wedding invite with split-door hero, gold shimmer, lanterns, and bilingual content.', tags: ['Tamil', 'Bilingual', 'Dark Luxury'], href: '/demo/tamil', preview: 'Dark gold · Split-door hero · Tamil + English' },
+  { num: '04', name: 'South Indian', label: 'New', desc: 'Illustrated South Indian wedding invite with temple scenes, marigold aesthetics, ceremony timeline, and live countdown.', tags: ['South Indian', 'Illustrated', 'Tamil'], href: '/demo/southindian', preview: 'Marigold & gold · Temple scenes · Ceremony timeline' }
 ]
 
 const features = [
@@ -228,6 +229,7 @@ export default function HomePage() {
           <Link href='/demo/cinematic' style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: '#7a6a5a', textDecoration: 'none' }}>Cinematic</Link>
           <Link href='/demo/beach' style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: '#7a6a5a', textDecoration: 'none' }}>Beach</Link>
           <Link href='/demo/tamil' style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: '#7a6a5a', textDecoration: 'none' }}>Tamil</Link>
+          <Link href='/demo/southindian' style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: '#7a6a5a', textDecoration: 'none' }}>South Indian</Link>
         </div>
         <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.7rem', color: '#b0a080', letterSpacing: '0.06em' }}>Crafted with love · 2026</p>
       </footer>
